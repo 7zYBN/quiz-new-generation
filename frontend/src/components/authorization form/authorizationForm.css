@@ -1,0 +1,51 @@
+.wrapper {
+  height: 300px;
+  width: 500px;
+  border: 1px solid black;
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-in-toggle, .sign-up-toggle {
+  width: 50%;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sign-in-toggle.not-selected, .sign-up-toggle.not-selected {
+  font-weight: normal;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.sign-in-toggle.not-selected {
+  border-right: 1px solid black;
+}
+
+.sign-up-toggle.not-selected {
+  border-left: 1px solid black;
+}
+
+.sign-in-toggle.not-selected:hover, .sign-up-toggle.not-selected:hover {
+  box-shadow: 0px 0px 20px 10px rgb(183, 184, 183);
+}
+
+label, input {
+  display: block;
+  width: 80%;
+  margin: auto;
+}
+
+/* .slon button {
+  display: block;
+  margin: auto;
+} */
+
+.field-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
