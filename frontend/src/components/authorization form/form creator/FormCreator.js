@@ -1,23 +1,22 @@
-import SuccessButton from "../../buttons/success button/SuccessButton.js";
+import Button from "../../button/Button.js";
 
 export default class FormCreator {
-  constructor({parent, formType}) {
+  constructor(parent = document.body, formType = 'Sign In') {
     this._parent = parent;
     this._formType = formType;
+    
     this._event = null;
-
     this._elements = {};
 
     this._buildForm();
   }
 
   _buildForm() {
-
     (this._formType === 'Sign Up') ? this._buildSignUpForm() : this._buildSignInForm();
     
     this._elements.password = this._buildField('Password', 'password');
 
-    new SuccessButton({text: this._formType, clickHeandle: this._event, parentNode: this._parent}).render();
+    new Button(this._formType, 'success', this._parent, this._event);
   }
 
   _buildSignInForm() {
@@ -31,20 +30,16 @@ export default class FormCreator {
     this._event = () => alert('Sign Up clicked');
   }
 
-  _buildField(labelText = 'Text', typeofFiled = 'text', parent = this._parent || document.body) {
-    const container = document.createElement('div');
+  _buildField(labelText = 'Text', typeofFiled = 'text', parent = this._parent) {
     const label = document.createElement('label');
     const input = document.createElement('input');
-
-    container.classList.add('field-container')
 
     input.setAttribute('id', `${labelText.toLowerCase()}-input`);
     input.setAttribute('type', typeofFiled);
     label.innerHTML = labelText;
     label.setAttribute('for', input.id);
-    container.appendChild(label);
-    container.appendChild(input);
-    parent.appendChild(container);
+    parent.appendChild(label);
+    parent.appendChild(input);
 
     return {label, input};
   }

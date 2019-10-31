@@ -1,5 +1,5 @@
 .wrapper {
-  height: 300px;
+  height: auto;
   width: 500px;
   border: 1px solid black;
 }
@@ -35,17 +35,7 @@
 }
 
 label, input {
-  display: block;
   width: 80%;
-  margin: auto;
-}
-
-/* .slon button {
   display: block;
-  margin: auto;
-} */
-
-.field-container {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px auto;
 }
