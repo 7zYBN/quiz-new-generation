@@ -1,3 +1,9 @@
+const TYPES = {
+  Success: 'success',
+  Primary: 'prymary',
+  Secondary: 'secondary'
+}
+
 export default class Button {
   constructor(text = 'Button', typeOfButton = 'default', parentNode = document.body, clickAction = () => alert("I'm Button")) {
     this._text = text;
@@ -10,6 +16,10 @@ export default class Button {
     this._createButton();
     this._setButtonStyle();
     this._setEvent();
+  }
+
+  static get TYPES() {
+    return TYPES;
   }
 
   _createButton() {
